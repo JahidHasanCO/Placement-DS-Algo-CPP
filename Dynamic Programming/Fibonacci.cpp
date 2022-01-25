@@ -17,15 +17,17 @@ int fibonacci(int n){
     arr[0] = 1;
     arr[1] = 1;
 
+    //for big number mul by 10 pow 9 + 7
+    int m = 1000000007
     for (int i = 2; i <= n; i++)
     {
-        arr[i] = arr[i-1] + arr[i-2];
+        arr[i] = arr[i-1]%m + arr[i-2]%m;
     }
     
     int output = arr[n];
 
     delete [] arr;
-    return output;
+    return output%m;
 
 }
 int main()
